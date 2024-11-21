@@ -1,6 +1,7 @@
 #!/bin/bash
+
 echo "###############################################################"
-echo "#           欢迎使用游艇舰队多IP一键安装脚本                     #"
+echo "#           欢迎使用作者多IP一键安装脚本                     #"
 echo "#           脚本支持系统: CentOS                             #"
 echo "#           商务合作TG: akanonono                             #"
 echo "###############################################################"
@@ -14,58 +15,56 @@ read -p "请输入选项 (1/2/3): " choice
 case $choice in
 1)
     echo "正在下载并运行 IP 网卡配置绑定脚本 bind.sh.x..."
-    # 请在此处添加实际的 bind.sh.x 文件下载链接
-    BIND_SCRIPT_URL="https://github.com/55620/bot/blob/9ac7cfa373b31b78bcb70bd389270353b071b1fe/bangdingip/bind.sh.x"
+    BIND_SCRIPT_URL="https://raw.githubusercontent.com/55620/bot/9ac7cfa373b31b78bcb70bd389270353b071b1fe/bangdingip/bind.sh.x"
     wget -O bind.sh.x $BIND_SCRIPT_URL
     if [[ $? -eq 0 ]]; then
         chmod +x bind.sh.x
+        echo "运行 bind.sh.x 脚本中，请稍候..."
         ./bind.sh.x
-        rm -f bind.sh.x
-        echo "IP 网卡配置绑定完成，临时文件已删除！"
+        echo "IP 网卡配置绑定脚本运行完成！"
     else
-        echo "下载 bind.sh.x 失败，请检查下载链接！"
+        echo "下载 bind.sh.x 失败，请检查下载链接是否正确！"
     fi
     ;;
 2)
     echo "正在安装 sk5..."
-    # 请在此处添加 sk5 文件的下载链接
-    SK5_FILE_URL="https://github.com/55620/bot/blob/9ac7cfa373b31b78bcb70bd389270353b071b1fe/bangdingip/sk5"
-    # 请在此处添加 sk5.sh.x 文件的下载链接
-    SK5_SCRIPT_URL="https://github.com/55620/bot/blob/9ac7cfa373b31b78bcb70bd389270353b071b1fe/bangdingip/sk5.sh.x"
-    
-    wget -O sk5 $SK5_FILE_URL
+    SK5_FILE_URL="https://raw.githubusercontent.com/55620/bot/9ac7cfa373b31b78bcb70bd389270353b071b1fe/bangdingip/sk5"
+    SK5_SCRIPT_URL="https://raw.githubusercontent.com/55620/bot/9ac7cfa373b31b78bcb70bd389270353b071b1fe/bangdingip/sk5.sh.x"
+
+    echo "下载 sk5 主文件到 /usr/local/bin..."
+    wget -O /usr/local/bin/sk5 $SK5_FILE_URL
     if [[ $? -eq 0 ]]; then
-        mv sk5 /usr/local/bin/
         chmod +x /usr/local/bin/sk5
-        echo "sk5 主文件已安装到 /usr/local/bin/ 目录！"
+        echo "sk5 主文件已安装到 /usr/local/bin 目录！"
     else
-        echo "下载 sk5 文件失败，请检查下载链接！"
+        echo "下载 sk5 主文件失败，请检查下载链接是否正确！"
         exit 1
     fi
 
+    echo "下载并运行 sk5 安装脚本..."
     wget -O sk5.sh.x $SK5_SCRIPT_URL
     if [[ $? -eq 0 ]]; then
         chmod +x sk5.sh.x
+        echo "运行 sk5.sh.x 脚本中，请稍候..."
         ./sk5.sh.x
-        rm -f sk5.sh.x
-        echo "sk5 安装脚本已执行，临时文件已删除！"
+        echo "sk5 安装脚本已运行完成！"
     else
-        echo "下载 sk5.sh.x 文件失败，请检查下载链接！"
+        echo "下载 sk5.sh.x 文件失败，请检查下载链接是否正确！"
     fi
     ;;
 3)
     echo "正在安装 l2tp..."
-    # 请在此处添加 1.sh.x 文件的下载链接
-    L2TP_SCRIPT_URL="https://github.com/55620/bot/blob/44dea5380ee289dbf58dee87a170e400d98b59f9/bangdingip/1.sh.x"
-    
+    L2TP_SCRIPT_URL="https://raw.githubusercontent.com/55620/bot/44dea5380ee289dbf58dee87a170e400d98b59f9/bangdingip/1.sh.x"
+
+    echo "下载并运行 l2tp 安装脚本..."
     wget -O 1.sh.x $L2TP_SCRIPT_URL
     if [[ $? -eq 0 ]]; then
         chmod +x 1.sh.x
+        echo "运行 1.sh.x 脚本中，请稍候..."
         ./1.sh.x
-        rm -f 1.sh.x
-        echo "l2tp 安装完成，临时文件已删除！"
+        echo "l2tp 安装完成！"
     else
-        echo "下载 1.sh.x 文件失败，请检查下载链接！"
+        echo "下载 1.sh.x 文件失败，请检查下载链接是否正确！"
     fi
     ;;
 *)
