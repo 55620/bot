@@ -1,7 +1,8 @@
 #!/bin/bash
 echo "###############################################################"
-echo "#           欢迎使用作者多IP一键安装脚本                     #"
+echo "#           欢迎使用游艇舰队多IP一键安装脚本                     #"
 echo "#           脚本支持系统: CentOS                             #"
+echo "#           商务合作TG: akanonono                             #"
 echo "###############################################################"
 echo ""
 echo "请选择操作："
@@ -14,7 +15,7 @@ case $choice in
 1)
     echo "正在下载并运行 IP 网卡配置绑定脚本 bind.sh.x..."
     # 请在此处添加实际的 bind.sh.x 文件下载链接
-    BIND_SCRIPT_URL="YOUR_BIND_SH_X_DOWNLOAD_LINK"
+    BIND_SCRIPT_URL="https://github.com/55620/bot/blob/main/bangdingip/bind.sh.x"
     wget -O bind.sh.x $BIND_SCRIPT_URL
     if [[ $? -eq 0 ]]; then
         chmod +x bind.sh.x
@@ -28,9 +29,9 @@ case $choice in
 2)
     echo "正在安装 sk5..."
     # 请在此处添加 sk5 文件的下载链接
-    SK5_FILE_URL="YOUR_SK5_DOWNLOAD_LINK"
+    SK5_FILE_URL="https://github.com/55620/bot/blob/main/bangdingip/sk5"
     # 请在此处添加 sk5.sh.x 文件的下载链接
-    SK5_SCRIPT_URL="YOUR_SK5_SH_X_DOWNLOAD_LINK"
+    SK5_SCRIPT_URL="https://github.com/55620/bot/blob/main/bangdingip/sk5.sh.x"
     
     wget -O sk5 $SK5_FILE_URL
     if [[ $? -eq 0 ]]; then
@@ -55,7 +56,7 @@ case $choice in
 3)
     echo "正在安装 l2tp..."
     # 请在此处添加 1.sh.x 文件的下载链接
-    L2TP_SCRIPT_URL="YOUR_1_SH_X_DOWNLOAD_LINK"
+    L2TP_SCRIPT_URL="https://github.com/55620/bot/blob/main/bangdingip/1.sh.x"
     
     wget -O 1.sh.x $L2TP_SCRIPT_URL
     if [[ $? -eq 0 ]]; then
