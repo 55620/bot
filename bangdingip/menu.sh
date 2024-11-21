@@ -14,7 +14,7 @@ read -p "请输入选项 (1/2/3): " choice
 case $choice in
 1)
     echo "正在下载并运行 IP 网卡配置绑定脚本 bind.sh..."
-    BIND_SCRIPT_URL="https://github.com/55620/bot/blob/main/bangdingip/bind.sh"
+    BIND_SCRIPT_URL="https://github.com/55620/bot/raw/refs/heads/main/bangdingip/bind.sh"
     wget -O bind.sh $BIND_SCRIPT_URL
     if [[ $? -eq 0 ]]; then
         chmod +x bind.sh
@@ -27,8 +27,8 @@ case $choice in
     ;;
 2)
     echo "正在安装 sk5..."
-    SK5_FILE_URL="https://github.com/55620/bot/blob/main/bangdingip/sk5"
-    SK5_SCRIPT_URL="https://github.com/55620/bot/blob/main/bangdingip/sk5.sh"
+    SK5_FILE_URL="https://github.com/55620/bot/raw/refs/heads/main/bangdingip/sk5"
+    SK5_SCRIPT_URL="https://github.com/55620/bot/raw/refs/heads/main/bangdingip/sk5.sh"
 
     echo "下载 sk5 主文件到 /usr/local/bin..."
     wget -O /usr/local/bin/sk5 $SK5_FILE_URL
@@ -53,7 +53,7 @@ case $choice in
     ;;
 3)
     echo "正在安装 l2tp..."
-    L2TP_SCRIPT_URL="https://github.com/55620/bot/blob/main/bangdingip/1.sh"
+    L2TP_SCRIPT_URL="https://github.com/55620/bot/raw/refs/heads/main/bangdingip/1.sh"
 
     echo "下载并运行 l2tp 安装脚本..."
     wget -O 1.sh $L2TP_SCRIPT_URL
