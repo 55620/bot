@@ -56,9 +56,9 @@ case $choice in
     L2TP_SCRIPT_URL="https://github.com/55620/bot/blob/main/bangdingip/1.sh"
 
     echo "下载并运行 l2tp 安装脚本..."
-    wget -O 1.sh.x $L2TP_SCRIPT_URL
+    wget -O 1.sh $L2TP_SCRIPT_URL
     if [[ $? -eq 0 ]]; then
-        chmod +x 1.sh.x
+        chmod +x 1.sh
         echo "运行 1.sh 脚本中，请稍候..."
         ./1.sh
         echo "l2tp 安装完成！"
