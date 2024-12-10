@@ -1,6 +1,6 @@
 #!/bin/sh
 rm -f $0
-socks_port="55620"
+socks_port="56230"
 socks_user="admin"
 socks_pass="141242"
 iptables -P INPUT ACCEPT
