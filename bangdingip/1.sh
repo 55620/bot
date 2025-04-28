@@ -289,5 +289,5 @@ iptables-save > /etc/sysconfig/iptables
 systemctl restart xl2tpd
 systemctl restart ipsec
 
-echo "账号密码保存在当前目录下 l2tp.txt 中，QQ群：209440683"
+echo "账号密码保存在当前目录下 l2tp.txt 中，TG：akanonono"
 cat l2tp.txt
